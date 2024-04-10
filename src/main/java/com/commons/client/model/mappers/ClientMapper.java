@@ -13,6 +13,7 @@ public interface ClientMapper {
     ClientMapper INSTANCE = Mappers.getMapper(ClientMapper.class);
 
     @Mapping(target = "id", ignore = true)
+//    @Mapping(target = "bookings", ignore = true)
     Client clientDTOToClient(ClientDTO clientDTO);
 
     ClientResponse clientToClientResponse(Client client);

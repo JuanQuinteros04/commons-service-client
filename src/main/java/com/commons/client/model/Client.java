@@ -1,5 +1,6 @@
 package com.commons.client.model;
 
+import com.commons.booking.model.Booking;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,19 +22,16 @@ public class Client {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "last_name")
+    @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @Column(name = "mail")
+    @Column(name = "mail", nullable = false)
     private String mail;
 
     @Column(name = "phone_number")
     private Long phoneNumber;
-
-    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Booking> bookings = new ArrayList<>();
 
 }
